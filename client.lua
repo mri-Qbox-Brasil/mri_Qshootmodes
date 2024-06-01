@@ -367,21 +367,21 @@ end)
 
 -- Remove reticle loop
 -- This is in it"s own loop to stop flickering caused by Citizen.Wait"s in other loops.
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
+-- Citizen.CreateThread(function()
+-- 	while true do
+-- 		Citizen.Wait(0)
 
-		-- If weapon does not require reticle, remove reticle
-		if FireMode.LastWeaponActive ~= "reticle" then HideHudComponentThisFrame(14) end
+-- 		-- If weapon does not require reticle, remove reticle
+-- 		if FireMode.LastWeaponActive ~= "reticle" then HideHudComponentThisFrame(14) end
 
-		-- Hide weapon icon
-		HideHudComponentThisFrame(2)
-		-- Hide weapon wheel stats
-		HideHudComponentThisFrame(20)
-		-- Hide hud weapons
-		HideHudComponentThisFrame(22)
-	end
-end)
+-- 		-- Hide weapon icon
+-- 		HideHudComponentThisFrame(2)
+-- 		-- Hide weapon wheel stats
+-- 		HideHudComponentThisFrame(20)
+-- 		-- Hide hud weapons
+-- 		HideHudComponentThisFrame(22)
+-- 	end
+-- end)
 
 -- Disable shooting loop
 Citizen.CreateThread(function()
