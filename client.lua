@@ -520,43 +520,43 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- Injury loop
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
+-- -- Injury loop
+-- Citizen.CreateThread(function()
+-- 	while true do
+-- 		Citizen.Wait(0)
 
-		local PlayerPed = PlayerPedId()
+-- 		local PlayerPed = PlayerPedId()
 
-		if HasEntityBeenDamagedByAnyPed(PlayerPed) then
-			ClearEntityLastDamageEntity(PlayerPed)
+-- 		if HasEntityBeenDamagedByAnyPed(PlayerPed) then
+-- 			ClearEntityLastDamageEntity(PlayerPed)
 
-			RequestAnimDict("move_m@injured")
-			if not HasAnimDictLoaded("move_m@injured") then
-				RequestAnimDict("move_m@injured")
-				while not HasAnimDictLoaded("move_m@injured") do Citizen.Wait(0) end
-			end
+-- 			RequestAnimDict("move_m@injured")
+-- 			if not HasAnimDictLoaded("move_m@injured") then
+-- 				RequestAnimDict("move_m@injured")
+-- 				while not HasAnimDictLoaded("move_m@injured") do Citizen.Wait(0) end
+-- 			end
 
-			-- Apply random effect to ped
-			ApplyPedDamagePack(PlayerPed, Config.BloodEffects[math.random(#Config.BloodEffects)], 0, 0)
-			-- Set limp
-			SetPedMovementClipset(PlayerPed, "move_m@injured", 5.0)
-			-- Add random amount of limping time
-			FireMode.Limp = FireMode.Limp + math.random(100, 200)
-		end
+-- 			-- Apply random effect to ped
+-- 			ApplyPedDamagePack(PlayerPed, Config.BloodEffects[math.random(#Config.BloodEffects)], 0, 0)
+-- 			-- Set limp
+-- 			SetPedMovementClipset(PlayerPed, "move_m@injured", 5.0)
+-- 			-- Add random amount of limping time
+-- 			FireMode.Limp = FireMode.Limp + math.random(100, 200)
+-- 		end
 
-		-- While there is still limp time remaining remove 1 tick from limp time
-		if FireMode.Limp > 0 then FireMode.Limp = FireMode.Limp - 1 end
+-- 		-- While there is still limp time remaining remove 1 tick from limp time
+-- 		if FireMode.Limp > 0 then FireMode.Limp = FireMode.Limp - 1 end
 
-		-- When there is no limp time remaining
-		if FireMode.Limp == 0 then
-			-- Reset limp timer
-			FireMode.Limp = -1
+-- 		-- When there is no limp time remaining
+-- 		if FireMode.Limp == 0 then
+-- 			-- Reset limp timer
+-- 			FireMode.Limp = -1
 
-			-- Remove walking effect
-			ResetPedMovementClipset(PlayerPed, false)
-		end
-	end
-end)
+-- 			-- Remove walking effect
+-- 			ResetPedMovementClipset(PlayerPed, false)
+-- 		end
+-- 	end
+-- end)
 
 -- Updates the synced flashlight variable
 RegisterNetEvent("Weapons:Client:Return")
