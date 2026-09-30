@@ -4,11 +4,12 @@
 
 ![channels4_banner|690x114](https://i.ibb.co/CHMD8y6/channels4-banner.jpg) 
 # Inferno Collection: Weapons
-[![Build Status](https://travis-ci.com/inferno-collection/Weapons.svg?branch=master)](https://travis-ci.com/inferno-collection/Weapons)
 
 __Public Beta Version 1.3__
 
 Adds fire modes to the weapons of your choice, as well as more realistic reloads (including disabling automatic reloads), consistent flashlights (stay turned on even when weapon is not being aimed), more blood when injured, and limping after being injured.
+
+<a href="https://www.buymeacoffee.com/inferno_collection" target="_blank"><img width="245" height="45" alt="fire_truk" src="https://inferno-collection.com/img/fire_truk.png" /></a>
 
 Presently, the following can be customized:
 - Which weapons have what fire mode.
@@ -27,5 +28,3 @@ Presently, the following can be customized:
 * ChristopherM
 * Scott_UK 
 * FrozenN00b
-***
-Like what you see? [Check out our other resource](https://inferno-collection.com/resources).
